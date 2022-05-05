@@ -8,7 +8,7 @@ FROM
 	JOIN Person.BusinessEntityAddress AS bea ON(bea.BusinessEntityID=p.BusinessEntityID)
 	JOIN Person.Address AS a ON(a.AddressID=bea.AddressID)
 GROUP BY 
-	bea.BusinessEntityID, p.FirstName, p.LastName
+	p.FirstName, p.LastName
 HAVING 
 	COUNT(bea.AddressTypeID) > 1
 ORDER BY 
